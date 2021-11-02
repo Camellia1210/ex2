@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/pixi.min.js"></script>
+    <script>
+		var app = new PIXI.Application(610,457);
+        document.body.appendChild(app.view);
+        
+        var bg = new PIXI.Sprite.fromImage("res/chg7.png");
+        app.stage.addChild(bg);
+		
+		var title = new PIXI.Sprite.fromImage("res/chg5.png");
+		title.width = 150;
+		title.height = 80;
+		app.stage.addChild(title);
+		title.anchor.set(0.5,0.5);
+		title.x = 300;
+		title.y = 100;
+		
+		var people = new PIXI.Sprite.fromImage("res/chg1.png");
+		people.width = 300;
+		people.height = 300;
+		app.stage.addChild(people);
+		people.y = 157;
+		
+		var cloud = new PIXI.Sprite.fromImage("res/chg8.png");
+		cloud.width = 300;
+		cloud.height = 300;
+		app.stage.addChild(cloud);
+		cloud.x = 300;
+		cloud.y = 100;
+		
+		var moon = new PIXI.Sprite.fromImage("res/chg9.png");
+		moon.width = 300;
+		moon.height = 400;
+		app.stage.addChild(moon);
+		moon.x = 300;
+		moon.y = 200;
+		
+		var next = new PIXI.Sprite.fromImage("res/chg10.png");
+		next.width = 610;
+		next.height = 457;
+		app.stage.addChild(next);
+		next.visible = false;
+		
+		moon.interactive = true;
+		moon.on("click",jump);
+		function jump(){
+			next.visible = true;
+			bg.visible = false;
+			title.visible = false;
+			people.visible = false;
+			cloud.visible = false;
+			moon.visible = false;
+		}
+		
+		
+		
+		
+		
+		
+		
+    </script>
+</body>
+</html>
